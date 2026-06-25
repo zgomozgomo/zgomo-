@@ -70,6 +70,7 @@ z-index:10000;
 #popupBox{
 
 width:95%;
+max-width:600px;
 height:92%;
 
 margin:20px auto;
@@ -82,8 +83,10 @@ overflow-y:auto;
 
 position:relative;
 
-}
+padding:10px;
 
+}
+  
 #closeBtn{
 position:absolute;
 top:10px;
@@ -179,8 +182,8 @@ value="New ZGOMO Claim Lead">
 <input type="hidden" name="_template"
 value="table">
 
-<form action="https://formsubmit.co/supportzgomo@gmail.com"
-method="POST"
+<input type="hidden" name="_autoresponse"
+value="Thank you! We have received your claim request.">
 style="padding:25px;height:100%;overflow:auto;box-sizing:border-box;">
 
 <input type="hidden" name="_captcha" value="false">
@@ -248,12 +251,13 @@ document.getElementById("applyBtn").style.display="none";
 
 }
 
-
 document.getElementById("closeBtn").onclick=function(){
 
 document.getElementById("popup").style.display="none";
 
 document.getElementById("applyBtn").style.display="block";
+
+document.querySelector("form").reset();
 
 }
 
