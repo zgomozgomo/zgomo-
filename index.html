@@ -93,12 +93,42 @@ cursor:pointer;
 z-index:10001;
 }
 
-iframe{
+input,select,textarea{
+
 width:100%;
-height:100%;
-border:none;
+padding:12px;
+margin:8px 0;
+
+border:1px solid #ccc;
+border-radius:8px;
+
+box-sizing:border-box;
+
+font-size:16px;
+
 }
 
+button[type=submit]{
+
+width:100%;
+
+padding:14px;
+
+background:#25D366;
+
+color:white;
+
+border:none;
+
+border-radius:8px;
+
+font-size:18px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+}
 </style>
 </head>
 
@@ -132,15 +162,66 @@ Apply Now
 </button>
 
 
-<div id="popup">
-
 <div id="popupBox">
 
 <span id="closeBtn">&times;</span>
 
-<iframe
-src="https://docs.google.com/forms/d/e/1FAIpQLSet41HXxW2ti7ZOgZaiXs7o2SOqavnpbF0t3XVqtsLQbPNQ8w/viewform?embedded=true">
-</iframe>
+<form action="https://formsubmit.co/supportzgomo@gmail.com"
+method="POST"
+style="padding:25px;height:100%;overflow:auto;box-sizing:border-box;">
+
+<input type="hidden" name="_captcha" value="false">
+
+<input type="hidden" name="_subject"
+value="New ZGOMO Claim Lead">
+
+<input type="hidden" name="_template"
+value="table">
+
+<input type="hidden" name="_next"
+value="https://zgomo.com">
+
+<h2 style="text-align:center;">
+ZGOMO Claim Assessment
+</h2>
+
+<input type="text"
+name="Name"
+placeholder="Full Name"
+required>
+
+<input type="email"
+name="Email"
+placeholder="Email Address"
+required>
+
+<input type="tel"
+name="Phone"
+placeholder="Phone Number"
+required>
+
+<select name="Claim Status" required>
+
+<option value="">Select Claim Status</option>
+
+<option>Rejected</option>
+
+<option>Partially Approved</option>
+
+<option>Delayed</option>
+
+</select>
+
+<textarea
+name="Issue"
+placeholder="Describe your issue"
+rows="5"></textarea>
+
+<button type="submit">
+Submit Application
+</button>
+
+</form>
 
 </div>
 
