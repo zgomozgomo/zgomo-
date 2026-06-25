@@ -161,6 +161,7 @@ margin:auto;
 Apply Now
 </button>
 
+<div id="popup">
 
 <div id="popupBox">
 
@@ -234,12 +235,16 @@ document.getElementById("applyBtn").onclick=function(){
 
 document.getElementById("popup").style.display="block";
 
+document.getElementById("applyBtn").style.display="none";
+
 }
 
 
 document.getElementById("closeBtn").onclick=function(){
 
 document.getElementById("popup").style.display="none";
+
+document.getElementById("applyBtn").style.display="block";
 
 }
 
