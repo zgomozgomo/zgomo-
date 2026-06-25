@@ -14,12 +14,13 @@ text-align:center;
 display:flex;
 flex-direction:column;
 align-items:center;
+font-family:Arial, sans-serif;
 }
 
 .container{
 position:relative;
 width:100%;
-max-width:600px;
+max-width:850px;
 margin:auto;
 }
 
@@ -28,21 +29,25 @@ width:100%;
 display:block;
 }
 
+/* CALL LINK */
 .call-area{
 position:absolute;
-left:40%;
+left:50%;
 top:87%;
-width:53%;
-height:4%;
+transform:translateX(-50%);
+width:60%;
+height:8%;
 z-index:100;
+display:block;
 }
 
+/* APPLY BUTTON */
 #applyBtn{
 position:fixed;
 bottom:25px;
 right:25px;
-width:180px;
-height:55px;
+width:200px;
+height:60px;
 background:#25D366;
 color:white;
 border:none;
@@ -54,6 +59,7 @@ cursor:pointer;
 z-index:9999;
 }
 
+/* POPUP */
 #popup{
 display:none;
 position:fixed;
@@ -62,44 +68,51 @@ left:0;
 width:100%;
 height:100%;
 background:rgba(0,0,0,.8);
-
-display:flex;
 justify-content:center;
 align-items:center;
-
 z-index:10000;
 }
 
+/* POPUP BOX + ANIMATION */
 #popupBox{
 width:95%;
-max-width:600px;
+max-width:700px;
 height:90vh;
-margin:0;
 background:white;
 border-radius:15px;
 overflow-y:auto;
 position:relative;
-padding:15px;
+padding:20px;
 box-sizing:border-box;
+
+transform:scale(0.8);
+opacity:0;
+transition:0.25s ease;
 }
 
+#popup.show #popupBox{
+transform:scale(1);
+opacity:1;
+}
+
+/* CLOSE BUTTON */
 #closeBtn{
 position:absolute;
 top:10px;
 right:15px;
 font-size:35px;
 cursor:pointer;
-z-index:10001;
 }
 
+/* FORM */
 input,select,textarea{
 width:100%;
 padding:12px;
 margin:8px 0;
 border:1px solid #ccc;
 border-radius:8px;
-box-sizing:border-box;
 font-size:16px;
+box-sizing:border-box;
 }
 
 button[type=submit]{
@@ -114,149 +127,104 @@ font-weight:bold;
 cursor:pointer;
 }
 
-h2{
-margin-top:35px;
-}
-@media (min-width:768px){
-
-.container{
-max-width:700px;
-}
-
-#popupBox{
-max-width:700px;
-}
-
+@media (max-width:768px){
 #applyBtn{
-width:220px;
-height:60px;
-font-size:24px;
+width:160px;
+height:50px;
+font-size:18px;
 }
 
+.call-area{
+width:70%;
+height:10%;
+}
 }
 
-@media (min-width:1024px){
-
-.container{
-max-width:850px;
-}
-
-#popupBox{
-max-width:800px;
-}
-
-#applyBtn{
-width:240px;
-height:65px;
-font-size:26px;
-}
-
-}
 </style>
 </head>
 
 <body>
 
+<!-- IMAGE 1 -->
 <div class="container">
+  <img src="ZGOMO_Page_1.jpg" alt="ZGOMO">
 
-<img src="ZGOMO_Page_1.jpg" alt="ZGOMO">
-
-<a class="call-area" href="tel:08069578408"></a>
-
+  <a class="call-area" href="tel:08069578408"></a>
 </div>
 
+<!-- IMAGE 2 -->
 <img src="ZGOMO_Page_2.jpg"
-style="
-width:100%;
-max-width:850px;
-display:block;
-margin:auto;
-">
+style="width:100%;max-width:850px;display:block;margin:auto;">
 
-<button id="applyBtn">
-Apply Now
-</button>
+<!-- APPLY BUTTON -->
+<button id="applyBtn">Apply Now</button>
 
+<!-- POPUP -->
 <div id="popup">
+  <div id="popupBox">
 
-<div id="popupBox">
+    <span id="closeBtn">&times;</span>
 
-<span id="closeBtn">&times;</span>
+    <form action="https://formsubmit.co/supportzgomo@gmail.com" method="POST">
 
-<form action="https://formsubmit.co/supportzgomo@gmail.com"
-method="POST">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_subject" value="New ZGOMO Claim Lead">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_next" value="https://zgomo.com/thankyou.html">
 
-<input type="hidden" name="_captcha" value="false">
+      <h2>ZGOMO HELP DESK</h2>
 
-<input type="hidden" name="_subject"
-value="New ZGOMO Claim Lead">
+      <input type="text" name="name" placeholder="Full Name" required>
 
-<input type="hidden" name="_template"
-value="table">
-  
-<input type="hidden" name="_next"
-value="https://zgomo.com/thankyou.html">
-  
-<h2>ZGOMO HELP DESK</h2>
+      <input type="email" name="email" placeholder="Email Address" required>
 
-<input type="text"
-name="Name"
-placeholder="Full Name"
-required>
+      <input type="tel" name="phone" placeholder="Phone Number" required>
 
-<input type="email"
-name="Email"
-placeholder="Email Address"
-required>
+      <select name="claim_status" required>
+        <option value="">Select Claim Status</option>
+        <option>Rejected</option>
+        <option>Partially Approved</option>
+        <option>Delayed</option>
+      </select>
 
-<input type="tel"
-name="Phone"
-placeholder="Phone Number"
-required>
+      <textarea name="issue" placeholder="Describe your issue" rows="5"></textarea>
 
-<select name="Claim Status" required>
+      <button type="submit">Submit</button>
 
-<option value="">Select Claim Status</option>
+    </form>
 
-<option>Rejected</option>
-
-<option>Partially Approved</option>
-
-<option>Delayed</option>
-
-</select>
-
-<textarea
-name="Issue"
-placeholder="Describe your issue"
-rows="5"></textarea>
-
-<button type="submit">
-Submit
-</button>
-
-</form>
-
-</div>
-
+  </div>
 </div>
 
 <script>
 
-document.getElementById("applyBtn").onclick=function(){
+const popup = document.getElementById("popup");
+const applyBtn = document.getElementById("applyBtn");
 
-document.getElementById("popup").style.display="flex";
-document.getElementById("applyBtn").style.display="none";
-
-}
-
-document.getElementById("closeBtn").onclick=function(){
-
-document.getElementById("popup").style.display="none";
-document.getElementById("applyBtn").style.display="block";
-document.querySelector("form").reset();
-
+// OPEN POPUP
+applyBtn.onclick = function(){
+  popup.style.display = "flex";
+  setTimeout(()=> popup.classList.add("show"), 10);
+  applyBtn.style.display = "none";
 };
+
+// CLOSE POPUP
+document.getElementById("closeBtn").onclick = closePopup;
+
+popup.onclick = function(e){
+  if(e.target === this){
+    closePopup();
+  }
+};
+
+function closePopup(){
+  popup.classList.remove("show");
+  setTimeout(()=>{
+    popup.style.display = "none";
+    applyBtn.style.display = "block";
+    document.querySelector("form").reset();
+  }, 200);
+}
 
 </script>
 
