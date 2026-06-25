@@ -39,20 +39,14 @@ bottom:25px;
 right:25px;
 width:180px;
 height:55px;
-
 background:#25D366;
 color:white;
-
 border:none;
 border-radius:50px;
-
 font-size:22px;
 font-weight:bold;
-
 box-shadow:0 4px 12px rgba(0,0,0,0.4);
-
 cursor:pointer;
-
 z-index:9999;
 }
 
@@ -68,25 +62,18 @@ z-index:10000;
 }
 
 #popupBox{
-
 width:95%;
 max-width:600px;
 height:92%;
-
 margin:20px auto;
-
 background:white;
-
 border-radius:15px;
-
 overflow-y:auto;
-
 position:relative;
-
 padding:10px;
-
+box-sizing:border-box;
 }
-  
+
 #closeBtn{
 position:absolute;
 top:10px;
@@ -97,66 +84,49 @@ z-index:10001;
 }
 
 input,select,textarea{
-
 width:100%;
 padding:12px;
 margin:8px 0;
-
 border:1px solid #ccc;
 border-radius:8px;
-
 box-sizing:border-box;
-
 font-size:16px;
-
 }
 
 button[type=submit]{
-
 width:100%;
-
 padding:14px;
-
 background:#25D366;
-
 color:white;
-
 border:none;
-
 border-radius:8px;
-
 font-size:18px;
-
 font-weight:bold;
-
 cursor:pointer;
-
 }
+
+h2{
+margin-top:35px;
+}
+
 </style>
 </head>
 
 <body>
 
-
 <div class="container">
 
 <img src="ZGOMO_Page_1.jpg" alt="ZGOMO">
 
-<a class="call-area"
-href="tel:08069578408">
-</a>
+<a class="call-area" href="tel:08069578408"></a>
 
 </div>
 
-
 <img src="ZGOMO_Page_2.jpg"
-
 style="
 width:100%;
 max-width:600px;
-
 display:block;
-
 margin:auto;
 ">
 
@@ -171,8 +141,7 @@ Apply Now
 <span id="closeBtn">&times;</span>
 
 <form action="https://formsubmit.co/supportzgomo@gmail.com"
-method="POST"
-style="padding:25px;height:100%;overflow:auto;box-sizing:border-box;">
+method="POST">
 
 <input type="hidden" name="_captcha" value="false">
 
@@ -182,20 +151,7 @@ value="New ZGOMO Claim Lead">
 <input type="hidden" name="_template"
 value="table">
 
-<input type="hidden" name="_captcha" value="false">
-
-<input type="hidden" name="_subject"
-value="New ZGOMO Claim Lead">
-
-<input type="hidden" name="_template"
-value="table">
-
-<input type="hidden" name="_autoresponse"
-value="Thank you! We have received your claim request.">
-
-<h2 style="text-align:center;">
-ZGOMO Claim Assessment
-</h2>
+<h2>ZGOMO Claim Assessment</h2>
 
 <input type="text"
 name="Name"
@@ -239,13 +195,11 @@ Submit
 
 </div>
 
-
 <script>
 
 document.getElementById("applyBtn").onclick=function(){
 
 document.getElementById("popup").style.display="block";
-
 document.getElementById("applyBtn").style.display="none";
 
 }
@@ -253,15 +207,12 @@ document.getElementById("applyBtn").style.display="none";
 document.getElementById("closeBtn").onclick=function(){
 
 document.getElementById("popup").style.display="none";
-
 document.getElementById("applyBtn").style.display="block";
-
 document.querySelector("form").reset();
 
 }
 
 </script>
-
 
 </body>
 </html>
