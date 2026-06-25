@@ -2,25 +2,144 @@
 <html>
 <head>
 <title>ZGOMO</title>
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <style>
+
 body{
 margin:0;
 background:#000;
 text-align:center;
 }
-img{
-width:100%;
+
+.container{
+position:relative;
 max-width:600px;
-display:block;
 margin:auto;
 }
+
+.container img{
+width:100%;
+display:block;
+}
+
+.call-area{
+position:absolute;
+left:40%;
+top:87%;
+width:53%;
+height:4%;
+z-index:100;
+}
+
+#applyBtn{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+border:none;
+padding:14px 22px;
+font-size:16px;
+border-radius:30px;
+cursor:pointer;
+z-index:9999;
+}
+
+#popup{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.8);
+z-index:10000;
+}
+
+#popupBox{
+width:95%;
+height:90%;
+margin:3% auto;
+background:white;
+border-radius:10px;
+overflow:hidden;
+position:relative;
+}
+
+#closeBtn{
+position:absolute;
+top:10px;
+right:15px;
+font-size:35px;
+cursor:pointer;
+z-index:10001;
+}
+
+iframe{
+width:100%;
+height:100%;
+border:none;
+}
+
 </style>
 </head>
+
 <body>
 
+
+<div class="container">
+
 <img src="ZGOMO_Page_1.jpg" alt="ZGOMO">
-<img src="ZGOMO_Page_2.jpg" alt="About ZGOMO">
+
+<a class="call-area"
+href="tel:08069578408">
+</a>
+
+</div>
+
+
+<img src="ZGOMO_Page_2.jpg" alt="ZGOMO">
+
+
+<button id="applyBtn">
+Apply Now
+</button>
+
+
+<div id="popup">
+
+<div id="popupBox">
+
+<span id="closeBtn">&times;</span>
+
+<iframe
+src="https://docs.google.com/forms/d/e/1FAIpQLSet41HXxW2ti7ZOgZaiXs7o2SOqavnpbF0t3XVqtsLQbPNQ8w/viewform?embedded=true">
+</iframe>
+
+</div>
+
+</div>
+
+
+<script>
+
+document.getElementById("applyBtn").onclick=function(){
+
+document.getElementById("popup").style.display="block";
+
+}
+
+
+document.getElementById("closeBtn").onclick=function(){
+
+document.getElementById("popup").style.display="none";
+
+}
+
+</script>
+
 
 </body>
 </html>
