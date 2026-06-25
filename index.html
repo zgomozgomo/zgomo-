@@ -90,6 +90,22 @@ opacity:0;
 transition:0.25s ease;
 }
 
+#popupBox{
+width:95%;
+max-width:700px;
+height:90vh;
+background:white;
+border-radius:15px;
+overflow-y:auto;
+position:relative;
+padding:20px;
+box-sizing:border-box;
+
+transform:scale(0.8);
+opacity:0;
+transition:0.25s ease;
+}
+
 #popup.show #popupBox{
 transform:scale(1);
 opacity:1;
@@ -203,6 +219,7 @@ const applyBtn = document.getElementById("applyBtn");
 
 // OPEN POPUP
 applyBtn.onclick = function(){
+  popup.classList.remove("show");
   popup.style.display = "flex";
   setTimeout(()=> popup.classList.add("show"), 10);
   applyBtn.style.display = "none";
